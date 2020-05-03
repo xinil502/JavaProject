@@ -9,6 +9,10 @@ public  所以类都可以访问。
 多态：继承，重写，父类引用子类
 
 转型：向上自动，向下强制。
+
+final:修饰的变量不可改变，不可被重新赋值。
+      修饰的方法不能被子类重写，但是可以重载。
+      修饰的类不能被继承。
  */
 public class Project10 {
     public static void main(String[] args) {
@@ -21,7 +25,7 @@ public class Project10 {
 
         Father a = new Child1(); //向上自动转型。
 //      a.test1(); 新对象自动转为Father，没有test1方法。
-        Child2 b = (Child2)a;//向下强制转型。
+        Child2 b = (Child2)a;//向下强制转型.（不能转向其他子类）
         b.test2();
     }
 
@@ -37,7 +41,7 @@ public class Project10 {
 }
 
 class Father{
-    public void fun(){
+    /*final*/ public void fun(){
         System.out.println("执行Father类。");
     }
 }
