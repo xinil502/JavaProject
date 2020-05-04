@@ -1,11 +1,11 @@
 package learnJava;
 
-        /*
-         * 运算符的使用
-         * Scanner输入数据
-         */
-        import java.util.Scanner;
+import java.util.Scanner;
 
+/*
+ * 运算符的使用
+ * Scanner输入数据
+ */
 public class Project2 {
     public static void main(String[] args){
         /*
@@ -26,10 +26,10 @@ public class Project2 {
         /*
          * 3     0011
          * 5     0101
-         * ————
-         * &    0001  按位与
-         * |      0111  按位或
-         * ^    0110  按位异或
+         * ————----------
+         * &     0001  按位与     1
+         * |     0111  按位或     7
+         * ^     0110  按位异或   6
          *
          * <<  左移    3<<2  相当于3*2*2
          * >>  右移    32>>2 相当于32/2/2
@@ -52,11 +52,11 @@ public class Project2 {
         char k = 'a';  //unicode 97
         System.out.println($x+$y+$z);
         System.out.println($y+$z+$x);
-        System.out.println(k+4);
+        System.out.println(k+4);  //字符区别于字符串 97+4
 
         /*
          * 条件运算符
-         *     x?a:b;    x为bollean类型
+         *     x ? true return : false return;    x为bollean类型
          */
         int score = 80;
         System.out.println(score<60?"不及格":"及格");
@@ -87,7 +87,8 @@ public class Project2 {
         System.out.println("请输入你的年龄：");
         int age = s.nextInt(); //输入其他类型会报错
         System.out.println("请输入你的爱好：");
-        String favor = s.nextLine();
+        String favor = s.nextLine();// 这条语句用于跳过上次读取的int数据后的回车换行符。
+        favor = s.nextLine();
         s.close();    //若没有关闭s对象会给出警告！
 
         System.out.println("#########");
