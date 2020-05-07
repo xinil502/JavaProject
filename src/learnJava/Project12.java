@@ -17,9 +17,16 @@ public class Project12 {
         a[0] = '1';
         a[1] = '2';
         String string = new String(a);
-        /*
-        用 "字符串直接量" 或 "字符数组" 创建字符串对象。
-        a="123";  String str = new String(a);  会创建两个字符串对象。
+        /**
+        new String() 用 "字符串直接量" 或 "字符数组" 创建字符串对象。
+        但是像：a="123";  String str = new String(a);  会创建两个字符串对象。
+
+        public static String valueOf(char data[]) {   //实际上也是调用new String()
+            return new String(data);
+        }
+        public String(char value[]) {
+            this.value = Arrays.copyOf(value, value.length);
+        }
          */
         System.out.println(string);
 
