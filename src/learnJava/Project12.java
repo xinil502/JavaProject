@@ -45,7 +45,7 @@ public class Project12 {
         int strLen1 = str1.length;// 保存第一个数组长度
         int strLen2 = str2.length;// 保存第二个数组长度
         str1 = Arrays.copyOf(str1, strLen1 + strLen2);// 扩容
-        System.arraycopy(str2, 0, str1, strLen1, strLen2);// 将第二个数组与第一个数组合并
+        System.arraycopy(str2, 0, str1, strLen1, strLen2);// 拷贝的数组，起始索引值，被拷贝的数组，起始索引值，拷贝长度
         System.out.println(Arrays.toString(str1));// 输出数组
 
     }
