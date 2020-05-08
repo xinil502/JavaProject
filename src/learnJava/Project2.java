@@ -78,6 +78,7 @@ public class Project2 {
          *
          *nextInt()读入整数
          *nextDouble()读入双精度数。
+         *char类型用next().charAt(0)  去截取next读取的字符串
          *
          */
         Scanner s = new Scanner(System.in);  //构造输入对象，标准输入流
