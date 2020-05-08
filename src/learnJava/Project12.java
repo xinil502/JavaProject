@@ -34,7 +34,8 @@ public class Project12 {
         System.out.println("字符串转字符数组：");
         String str = "apple";
         char[] ch = str.toCharArray();
-        System.out.println(Arrays.toString(ch)); //import java.util.Arrays;原格式输出
+        //
+        System.out.println(Arrays.toString(ch)); //import java.util.Arrays;原格式输出数组
         System.out.println(ch[2]);
         System.out.println(ch.length);
 
