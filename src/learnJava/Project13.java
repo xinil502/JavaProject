@@ -53,6 +53,8 @@ public class Project13 {
                     j = next[j];
             }
         }
+
+
         if(j == str2.length){
             System.out.println("存在，索引值为："+(i-j));
         }else{
