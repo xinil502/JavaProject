@@ -4,7 +4,7 @@ KMP算法，字符串匹配。
  */
 import java.util.Scanner;
 
-public class Project13 {
+public class Project_13 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.next();
