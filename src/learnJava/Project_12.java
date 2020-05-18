@@ -11,12 +11,13 @@ import java.util.Arrays;
 * 字符串和数组都有length方法，所以没有必要用空字符（\0）去控制结尾.
 *
  */
-public class Project12 {
+public class Project_12 {
     public static void main(String[] args) {
         char[] a = new char[10];
         a[0] = '1';
         a[1] = '2';
         String string = new String(a);
+        System.out.println(string.charAt(0)); //取字符串字符
         /**
         new String() 用 "字符串直接量" 或 "字符数组" 创建字符串对象。
         但是像：a="123";  String str = new String(a);  会创建两个字符串对象。
@@ -46,7 +47,8 @@ public class Project12 {
         int strLen1 = str1.length;// 保存第一个数组长度
         int strLen2 = str2.length;// 保存第二个数组长度
         str1 = Arrays.copyOf(str1, strLen1 + strLen2);// 扩容
-        System.arraycopy(str2, 0, str1, strLen1, strLen2);// 拷贝的数组，起始索引值，被拷贝的数组，起始索引值，拷贝长度
+        System.arraycopy(str2, 0, str1, strLen1, strLen2);
+        // 被拷贝的数组，起始索引值，拷贝至的数组，起始索引值，拷贝长度
         System.out.println(Arrays.toString(str1));// 输出数组
 
     }
