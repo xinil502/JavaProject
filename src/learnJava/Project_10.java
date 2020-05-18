@@ -14,7 +14,7 @@ final:修饰的变量不可改变，不可被重新赋值。
       修饰的方法不能被子类重写，但是可以重载。
       修饰的类不能被继承。
  */
-public class Project10 {
+public class Project_10 {
     public static void main(String[] args) {
         Father p1 = new Father();
         Child1 p2 = new Child1();
@@ -25,13 +25,14 @@ public class Project10 {
 
         Father a = new Child1(); //向上自动转型。
 //      a.test1(); 新对象自动转为Father，没有test1方法。
-        Child2 b = (Child2)a;//向下强制转型.（不能转向其他子类）
-        b.test2();
+        Child1 b = (Child1)a;//向下强制转型.（不能转向其他子类）
+        b.test1();
     }
 
     static void funn(Father p){  //多态可以根据父类去引用子类。
         p.fun();
     }
+//    省去下面的重载代码：
 //    static void funn(Child1 p){
 //        p.fun();
 //    }
