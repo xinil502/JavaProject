@@ -1,6 +1,6 @@
 package learnJava;
 
-public class Project11 {
+public class Project_11 {
     public static void main(String[] args) {
         int[] arr1 = new int[5];
         for(int i=0; i<arr1.length; ++i){
