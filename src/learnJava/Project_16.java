@@ -13,7 +13,7 @@ public class Project_16 {
         //2.静态内部类：可以直接通过访问外部类的静态成员访问。
         OuterClass_2.Inner2 inner2 = new OuterClass_2.Inner2();
 
-        //2.匿名内部类
+        //3.匿名内部类
         Project_16.testclass(new TT(){ //调用本类中的test方法
             public void tt(){
                 System.out.println("正在调用TT接口创建的匿名类中的test方法");
