@@ -14,11 +14,6 @@ public class Project_25 {
         f.renameTo(new File("C:\\Users\\admin\\Desktop\\renamed.txt")); //改名操作
         System.out.println(f); //显示路径
 
-        System.out.println(System.getProperty("user.dir")); //改为项目路径
-        File f2 = new File("a.txt");
-        System.out.println(f2);
-//        f2.delete();  //删除该目录的文件
-
         f = new File("C:\\Users\\admin\\Desktop\\renamed.txt");
         System.out.println("File是否存在" + f.exists());
         System.out.println("File是否是目录" + f.isDirectory());
