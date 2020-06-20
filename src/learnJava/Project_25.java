@@ -23,7 +23,7 @@ public class Project_25 {
         System.out.println("File是否存在" + f.exists());
         System.out.println("File是否是目录" + f.isDirectory());
         System.out.println("File是否是文件" + f.isFile());
-        System.out.println("File最后修改时间" +  new Date(f.lastModified()));
+        System.out.println("File最后修改时间" + new Date(f.lastModified()));
         System.out.println("File的大小" + f.length());
         System.out.println("File的文件名" + f.getName());
         System.out.println("File的目录路径" + f.getPath());
@@ -37,5 +37,21 @@ public class Project_25 {
         f3 = new File("C:\\Users\\admin\\Desktop\\a\\b\\c");
         mkdir = f3.mkdirs(); //中间目录不存在也没关系，会创建整个目录树。
         System.out.println(mkdir);
+    }
+
+    static void printFile(File file, int level) {
+        //输出当前的层
+        for (int i = 0; i < level; ++i) {
+            System.out.print("-");
+        }
+        System.out.println(file.getName());
+
+        //输出子层
+        if (file.isDirectory()) {
+            File[] files = file.listFiles();
+            for (File temp : files) {
+                printFile(temp, level + 1);
+            }
+        }
     }
 }
