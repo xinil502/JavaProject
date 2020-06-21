@@ -11,7 +11,7 @@ public class Project8 {
         stu1.fun1();
         stu1.fun2();
 
-        System.out.println(stu1 instanceof Student); //用于判断左边对象是不是属于右边类
+        System.out.println(stu1 instanceof Student); //用于判断左边对象是不是属于右边类或右边类的子类（左边对象赋值给右边引用可以实现）
         System.out.println(stu1 instanceof Person); //学生是不是人？
         System.out.println(stu1 instanceof Object);
         System.out.println(new Person() instanceof Student);
