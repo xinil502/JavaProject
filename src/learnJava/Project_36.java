@@ -3,6 +3,14 @@ package learnJava;
 
 /**
  * Iterator 遍历泛型
+ *
+ *
+ * List，Set 直接建立对应泛型的迭代器，用hasNext 方法和next方法去遍历
+ *
+ * Map 将 “键值对” 或 “键” 变为set  ，再用hasNext 方法和next方法去遍历
+ *
+ *         Set<Map.Entry<Integer, String>> is = map.entrySet();
+ *                 Set<Integer> is = map.keySet();
  */
 
 import java.util.*;
