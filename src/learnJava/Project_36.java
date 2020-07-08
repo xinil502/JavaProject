@@ -18,7 +18,7 @@ public class Project_36 {
         }
 
         for (Iterator<String> iter = list.iterator(); iter.hasNext(); ) {
-            System.out.println(iter.next()); //返回当前对象，并且前移到下一个。
+            System.out.println(iter.next()); //.next()开始时，位于第一个元素之前，使用.next时前移到下一个，并返回对应的元素。
         }
     }
 
