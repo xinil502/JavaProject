@@ -1,5 +1,10 @@
 package learnJava;
 
+
+/**
+ * Iterator 遍历泛型
+ */
+
 import java.util.*;
 
 public class Project_36 {
