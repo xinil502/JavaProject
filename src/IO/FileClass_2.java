@@ -1,17 +1,18 @@
 package IO;
 
 /**
- * 文件字节流
+ * 文件字节流 输入输出，文件复制
  */
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 public class FileClass_2 {
     public static void main(String[] args) {
-//        testInputStream();
-        testOutputStream();
-
+//        testInputStream(); //文件字节输入流
+//        testOutputStream();  //文件字节输出流
+        copyFile(new File("C:\\Users\\admin\\Desktop\\1S@%I2@S(CKYLJX7(MQ]83B.png"), new File("C:\\Users\\admin\\Desktop\\1.png"));
     }
 
     public static void testInputStream(){  //文件字节输入流
@@ -41,6 +42,31 @@ public class FileClass_2 {
             out.close(); //关闭流
 
         }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void copyFile(File file1, File file2){//复制文件
+        if(file1.isDirectory() || file2.isDirectory()){
+            return;
+        }
+        try{
+            FileInputStream in = new FileInputStream(file1);
+            FileOutputStream out = new FileOutputStream(file2);
+            byte[] b = new byte[100]; //用于存储数据
+            int len;
+
+            if(!file2.exists()) {
+                file2.createNewFile();
+            }
+            while((len = in.read(b)) != -1){//读取到数组中
+                out.write(b,0,len);  //写入内存
+            }
+
+            out.flush(); //刷新到硬盘
+            out.close();
+            in.close();
+        }catch(Exception e){
             e.printStackTrace();
         }
     }
