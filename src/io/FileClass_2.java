@@ -1,4 +1,4 @@
-package IO;
+package io;
 
 /**
  * 文件字节流 输入输出，文件复制
@@ -37,6 +37,7 @@ public class FileClass_2 {
         try {
             FileOutputStream out = new FileOutputStream("C:\\Users\\admin\\Desktop\\txt.txt");
             String str = "abcdefg";
+
             out.write(str.getBytes());  //传为byte数组传入, 把数据写到内存中。
             out.flush(); //把内存中的数据刷写到硬盘上
             out.close(); //关闭流
@@ -56,9 +57,6 @@ public class FileClass_2 {
             byte[] b = new byte[100]; //用于存储数据
             int len;
 
-            if(!file2.exists()) {
-                file2.createNewFile();
-            }
             while((len = in.read(b)) != -1){//读取到数组中
                 out.write(b,0,len);  //写入内存
             }
