@@ -1,4 +1,4 @@
-package IO;
+package io;
 
 /**
  * File 类
