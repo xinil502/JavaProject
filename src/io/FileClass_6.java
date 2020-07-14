@@ -15,10 +15,10 @@ public class FileClass_6 {
     public static void testSysytemIn(){
         //创建一个接收键盘输入数据的输入流
         InputStreamReader isr = new InputStreamReader(System.in); //输入流
-
+        
         //把输入流放到缓冲流里
         BufferedReader br = new BufferedReader(isr);
-        
+
         String str = "";
         try {
             while((str = br.readLine()) != null){
