@@ -4,12 +4,19 @@ public class HashMap <K, V>{
 
     private HashMapNode[] table;// 位桶数组bucket array
     private int size; //存储的键值对的个数
+    private static final double K = 0.75;
 
     public HashMap(){
         table = new HashMapNode[16];
     }
+    public HashMap(int lenth){
+        table = new HashMapNode[lenth];
+    }
 
     public void put(K key, V value){
+        if(size + 1 >= table.length * K){
+            resize();
+        }
         //可以添加一个数组扩容***
         HashMapNode<K, V> newNode = new HashMapNode<>();
         newNode.hash = myHash(key.hashCode(), table.length);
@@ -35,6 +42,23 @@ public class HashMap <K, V>{
             }
             last.next = newNode; //未找到相同的键，在最后一个结点后加上新结点
         }
+    }
+
+    public void resize(){
+        if(size >= 2*30){
+            return;
+        }
+        HashMap hm = new HashMap(table.length * 2);
+
+        for(int i=0; i<table.length; ++i){
+            HashMapNode temp = table[i];
+            while(temp != null){
+                hm.put(temp.key, temp.value);
+                temp = temp.next;
+            }
+        }
+
+        table = hm.table;
     }
 
     public V get(K key){
@@ -88,12 +112,10 @@ class HashMapNode<K, V>{
 class TestHashMap{
     public static void main(String[] args) {
         HashMap<Integer, String> hm = new HashMap<>();
-        hm.put(10, "ten");
-        hm.put(11, "eleven");
-        hm.put(12, "twelve");
-        hm.put(30, "thirty");
-        hm.put(30,"newThirty");
+        for(int i=0; i<26; ++i){
+            hm.put(i, "" + (char)('a'+i));
+        }
         System.out.println(hm);
-        System.out.println(hm.get(30));
+        System.out.println(hm.get(10));
     }
 }
