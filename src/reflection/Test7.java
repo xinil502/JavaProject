@@ -7,8 +7,8 @@ import java.lang.reflect.Field;
  *
  * 反射调用指定属性
  *
- * get调用本类和父类的 public 信息
- * getDeclare调用本类的所有属性（包括私有）
+ * get调用本类和父类的 public 信息（包括继承，但只包括public）
+ * getDeclare调用本类的所有属性（包括所有封装,但不包括继承）
  */
 public class Test7 {
     public static void main(String[] args) {
