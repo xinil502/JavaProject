@@ -18,8 +18,12 @@ class Student extends Person implements Move, Speak{
     String school;
 
 
+    public Student setSchool(String school) {
+        this.school = school;
+        return this;
+    }
 
-    Student() {
+    public Student() {
     }
 
     private Student(String school) {
