@@ -17,6 +17,20 @@ class Student extends Person implements Move, Speak{
 
     String school;
 
+
+
+    Student() {
+    }
+
+    private Student(String school) {
+        this.school = school;
+    }
+
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
     public void getSchool() {
         System.out.println("学校是" + school);
     }
