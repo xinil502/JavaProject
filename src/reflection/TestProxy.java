@@ -49,6 +49,7 @@ public class TestProxy {
 
 
         /**
+         * 提供详细的代理服务。
          *
          * 如果一个对象想要被 Proxy.newProxyInstance方法被代理
          *
@@ -58,7 +59,7 @@ public class TestProxy {
         InvocationHandler handler = new ProxyClass(test); //传入被代理的对象，生成代理对象
 
         /**
-         * 生成被动态代理的对象
+         * 提供代理实例对象。
          *
          * 参数 ： 代理对象的类加载器     原对象的接口    代理对象
          *  返回值是成功被代理后的动态代理对象（返回Object类型，，需要强制转换）
