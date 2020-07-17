@@ -22,7 +22,7 @@ package thread;
  * 4.调用线程对象的start方法：启动线程，调用run方法
  */
 
-public class LeranThread_1 {
+public class LearnThread_1 {
     public static void main(String[] args) {
         Thread t = new TestThread();
         t.start();//启动线程
