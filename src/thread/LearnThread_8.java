@@ -22,6 +22,7 @@ public class LearnThread_8 {
         Thread saleThread1 = new Thread(sale1, "一号售货台");
         Thread saleThread2 = new Thread(sale2, "二号售货台");
 
+        //按照生产12，消费12的顺序可能出现死锁，所以wait();前notify()一下
         sale1.setNum(19);
         saleThread1.start();
 
@@ -53,8 +54,8 @@ class Cleck {
                 num -= size-food;
                 food = size;
                 System.out.println(" -> " + food + " 柜台已满，还有" + num + "件货物生产者已生产");
-                this.wait();
                 this.notify();
+                this.wait();
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
