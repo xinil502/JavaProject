@@ -56,7 +56,9 @@ public class JdbcTest_3 {
                  *  参数：index(列数，从1开始)。
                  *  参数：字段值 (查询结果集的列名)
                  */
-                System.out.println(rs.getInt("a") + "\t"+ rs.getString(2) + "\t" + rs.getDouble("sal"));
+                System.out.println(rs.getInt("a")
+                        + "\t"+ rs.getString(2)
+                        + "\t" + rs.getDouble("sal"));
             }
         } catch (Exception e) {
             e.printStackTrace();
