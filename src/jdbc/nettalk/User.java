@@ -15,7 +15,7 @@ public class User {
         u[0] = sc.next();
         System.out.print("请输入密码：");
         u[1] = sc.next();
-        Socket socket = new Socket("192.168.0.3", 9999);
+        Socket socket = new Socket("127.0.0.1", 9999);
         new Thread(new Send(socket, u[0], u[1])).start();
         new Thread(new Receive(socket)).start();
     }
