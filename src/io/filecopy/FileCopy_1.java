@@ -12,6 +12,8 @@ public class FileCopy_1 {
         try {
             if(!to.exists()){
                 to.createNewFile();
+            }else{
+                System.out.println(to.getAbsoluteFile()+ "文件已被覆盖");
             }
             BufferedInputStream bis = new BufferedInputStream(new FileInputStream(from));
             BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(to));
