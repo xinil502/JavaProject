@@ -22,12 +22,12 @@ public class User {
 }
 
 class Send implements Runnable {
-    private BufferedReader br;
-    private DataOutputStream dos;
     private Socket client;
-    static boolean isRunning = true;
     private String userName;
     private String password;
+    static boolean isRunning = true;
+    private BufferedReader br;
+    private DataOutputStream dos;
 
     public Send(Socket socket, String name, String password) {
 

@@ -27,7 +27,7 @@ public class Server {
         while (isRunning) {
             socket = server.accept();
             Channel c = new Channel(socket);
-            System.out.println("一个客户建立了链接.");
+            System.out.println("收到一个链接请求.");
             all.add(c);
             new Thread(c).start();
         }
@@ -37,13 +37,13 @@ public class Server {
     }
 
     static class Channel implements Runnable{
-        private DataInputStream dis;
-        private DataOutputStream dos;
         private Socket socket;
-        private boolean isRunning = true;
         private int uid;
         private String userName;
         private String password;
+        private boolean isRunning = true;
+        private DataInputStream dis;
+        private DataOutputStream dos;
 
 
         public Channel(Socket socket) {
@@ -109,6 +109,7 @@ public class Server {
                     dos.writeBoolean(false);
                     return false;
                 }
+                System.out.println(userName + "建立连接成功");
                 dos.writeBoolean(true);
                 dos.flush();
             } catch (IOException e) {
@@ -121,7 +122,7 @@ public class Server {
         @Override
         public void run() {
             //初始化用户id和信息
-            if(! startReceive()){
+            if(!startReceive()){
                 return;
             }
 
