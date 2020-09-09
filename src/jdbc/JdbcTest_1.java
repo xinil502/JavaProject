@@ -1,6 +1,7 @@
 package jdbc;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -31,7 +32,7 @@ public class JdbcTest_1 {
             DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
 
             //2.获取连接(ip,端口，用户名，密码)
-            BufferedReader br = new BufferedReader(new FileReader("src/jdbc/user.properties"));
+            BufferedReader br = new BufferedReader(new FileReader(new File("src/jdbc/user.properties")));
             Properties p = new Properties();
             p.load(br);
             br.close();
