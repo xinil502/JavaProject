@@ -63,6 +63,7 @@ public class Server {
                 msg = dis.readUTF();
             } catch (IOException e) {
                 e.printStackTrace();
+                sendOthers("\n" + userName + " 离开了群聊。"); //收不到消息了，应该是人没了。
                 release();
             }
             return msg;
@@ -93,7 +94,6 @@ public class Server {
                 dis.close();
                 dos.close();
                 all.remove(this);
-                sendOthers(userName + " 离开了群聊。");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -104,8 +104,8 @@ public class Server {
                 userName = dis.readUTF();
                 password = dis.readUTF();
                 SignIn si = new SignIn(userName, password);
-                int id = si.judgeSignIn();
-                if(id == -1){
+                uid = si.judgeSignIn();
+                if(uid == -1){
                     dos.writeBoolean(false);
                     return false;
                 }
