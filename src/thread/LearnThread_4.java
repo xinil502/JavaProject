@@ -15,6 +15,9 @@ package thread;
  * stop(); //在主程序中立刻结束某线程
  *
  * boolean isAlive(); //判断某线程是否存活
+ *
+ * yield 和 sleep是静态方法，可以通过类直接调用，
+ * 其他的方法是成员方法，需要在主函数中通过对象调用，或者在run方法中调用当前对象的成员方法
  */
 public class LearnThread_4 {
     public static void main(String[] args) {
