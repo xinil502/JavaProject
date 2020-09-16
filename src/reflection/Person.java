@@ -43,6 +43,11 @@ class Student extends Person implements Move, Speak{
         System.out.println("自行车绿色出行");
     }
 
+    public int moveWay2(int i, int i2) {
+        System.out.println("自行车绿色出行");
+        return i+i2;
+    }
+
     @Override
     public void speak() {
         System.out.println("多国语言，学了就会。");

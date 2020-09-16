@@ -22,11 +22,11 @@ public class Test6 {
              */
 
             // 获取方法需要两个参数：方法名。  参数类型(0 - 多个)
-            Method m = c.getMethod("moveWay");
+            Method m = c.getMethod("moveWay2", int.class, int.class);
 //            Method m = c.getDeclaredMethod("moveWay"); //调用私有方法
 //            m.setAccessible(true);  //解除私有
             //使用方法需要两个参数：实例化对象，当前方法的 实际参数
-            m.invoke(obj); //调用方法
+            System.out.println(m.invoke(obj,2,3)); //调用方法
 
         } catch (Exception e) {
             e.printStackTrace();
