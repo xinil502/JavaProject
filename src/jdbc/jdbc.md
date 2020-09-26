@@ -56,30 +56,50 @@ stmt.close();
 
 **注意**：SQL语句不用写分号。
 
+int executeUpdate(String sql)  
+
+* 专门执行DML语句，增删改(INSERT/DELETE/UPDATE)
+* 返回值为被修改的记录条数
+
+ResultSet executeQuery(String sql)   查询
+
+* 专门执行查询语句。
+* 返回值为ResultSet结果集，，使用完成后需要释放
+
 #### 1.修改数据
 
 ```java
-/**
-* .executeUpdate() 专门执行DML语句（INSERT, DELETE, UPDATE）
-* 返回值：影响数据库中的记录条数。
-*/
 String sql = "INSERT INTO dept VALUES(50,'其他部门','北京')";
 int count = stmt.executeUpdate(sql);
 ```
 
 #### 2.查询数据
 
+Resulet结果集处理
+
+  * 结果集起始位于第一行数据的前一行。
+
+  * `boolean next()`后移一位，并判断移动后的位置是否有数据
+
+  * `String getString(参数)` 不管数据类型是什么，都以String取出
+
+  * `Int getInt(参数)`   以特定类型取出
+
+       参数：
+
+       * `int index`：列数，从1开始。
+
+         *  `String 字段值`：查询结果集的列名
+
 ```java
-/**
- * int executeUpdate(INSERT/DELETE/UPDATE)  增删改
- * ResultSet executeQuery(SELECT)   查询
- *
- * executeQuery()  +  ResultSet查询结果集（需要释放）
- * 返回值：单个ResultSet对象，永远不能为null。
- */
 String sql = "SELECT empno a,ename,sal FROM emp";
 rs = stmt.executeQuery(sql);
-//rs结果集处理....
+
+while(rs.next()){
+    System.out.println(rs.getInt("a")
+        + "\t"+ rs.getString(2)
+		+ "\t" + rs.getDouble("sal"));
+}
 rs.close();
 ```
 
